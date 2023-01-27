@@ -1,5 +1,7 @@
 package jp.ac.uryukyu.ie.e225725;
 
+//import org.checkerframework.checker.units.qual.A;
+
 /**
  * 敵クラス。
  *  String name; //敵の名前
@@ -9,10 +11,10 @@ package jp.ac.uryukyu.ie.e225725;
  * Created by tnal on 2016/11/13.
  */
 public class Enemy {
-    public String name;
-    public int hitPoint;
-    public int attack;
-    public boolean dead;
+    private String name;
+    private int hitPoint;
+    private int attack;
+    private boolean dead;
 
     /**
      * コンストラクタ。名前、最大HP、攻撃力を指定する。
@@ -28,6 +30,15 @@ public class Enemy {
         System.out.printf("%sのHPは%d。攻撃力は%dです。\n", name, maximumHP, attack);
     }
 
+    public String getenemyname(){
+        return name;
+    }
+
+    public boolean getenemydead(){
+        return dead;
+    }
+
+
     /**
      * Heroへ攻撃するメソッド。
      * attackに応じて乱数でダメージを算出し、hero.wounded()によりダメージ処理を実行。
@@ -39,7 +50,7 @@ public class Enemy {
         }
         if (this.dead == false){
             int damage = (int)(Math.random() * attack);
-            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.name, damage);
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getheroname(), damage);
             hero.wounded(damage);
         }
     }
