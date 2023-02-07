@@ -30,12 +30,16 @@ public class Enemy {
         System.out.printf("%sのHPは%d。攻撃力は%dです。\n", name, maximumHP, attack);
     }
 
-    public String getenemyname(){
+    public String getName(){
         return name;
     }
 
-    public boolean getenemydead(){
+    public boolean getDead(){
         return dead;
+    }
+
+    public int getHitPoint(){
+        return this.hitPoint;
     }
 
 
@@ -50,7 +54,7 @@ public class Enemy {
         }
         if (this.dead == false){
             int damage = (int)(Math.random() * attack);
-            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getheroname(), damage);
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getName(), damage);
             hero.wounded(damage);
         }
     }
