@@ -7,13 +7,13 @@ public class WarriorTest {
     @Test
 void attackTest() {
     int defaultHeroHp = 100;
-    Warrior demoHero = new Warrior("デモ勇者", defaultHeroHp, 100);
-    Enemy slime = new Enemy("スライムもどき", 10, 100);
-    for(int count=0; count<10; count++){
-        demoHero.attackWithWeponSkill(slime); // over kill
+    Warrior demoHero = new Warrior("デモ勇者", defaultHeroHp, 10);
+    Enemy slime = new Enemy("スライムもどき", 100, 1);
+    for(int count=0; count<3; count++){
+        demoHero.attackWithWeponSkill(slime); 
     }
     slime.attack(demoHero);
-    assertEquals(defaultHeroHp, demoHero.getHitPoint());
+    assertEquals(55, slime.getHitPoint());
 }
 }
     
