@@ -11,9 +11,9 @@ void attackTest() {
     Enemy slime = new Enemy("スライムもどき", 100, 1);
     for(int count=0; count<3; count++){
         demoHero.attackWithWeponSkill(slime); 
+        assertEquals(demoHero.attack * 1.5, (100-15*count)-slime.getHitPoint());
+
     }
-    slime.attack(demoHero);
-    assertEquals(55, slime.getHitPoint());
 }
 }
     
